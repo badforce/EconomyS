@@ -145,27 +145,27 @@ class EconomyJob extends PluginBase implements Listener{
 		switch(array_shift($params)){
 			case "join":
 				if(!$sender instanceof Player){
-					$sender->sendMessage("Please run this command in-game.");
+					$sender->sendMessage("Bitte geben sie es Ingame ein.");
 				}
 				if($this->player->exists($sender->getName())){
 					$sender->sendMessage("You already have joined job.");
 				}else{
 					$job = array_shift($params);
 					if(trim($job) === ""){
-						$sender->sendMessage("Usage: /job join <name>");
+						$sender->sendMessage("Befehl: /job join <name>");
 						break;
 					}
 					if($this->jobs->exists($job)){
 						$this->player->set($sender->getName(), $job);
-						$sender->sendMessage("You have joined to the job \"$job\"");
+						$sender->sendMessage("D \"$job\"" Job);
 					}else{
-						$sender->sendMessage("There's no job named \"$job\"");
+						$sender->sendMessage("Der Job  \"$job\" Exestiert nicht");
 					}
 				}
 				break;
 			case "retire":
 				if(!$sender instanceof Player){
-					$sender->sendMessage("Please run this command in-game.");
+					$sender->sendMessage("Bitte geben Sie .");
 				}
 				if($this->player->exists($sender->getName())){
 					$job = $this->player->get($sender->getName());
